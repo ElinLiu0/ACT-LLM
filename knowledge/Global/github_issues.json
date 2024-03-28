@@ -1,0 +1,58 @@
+[
+    {
+        "open_url": "https://github.com/OverlayPlugin/OverlayPlugin/issues",
+        "open_pages": 1,
+        "closed_url": "https://github.com/OverlayPlugin/OverlayPlugin/issues?page={}&q=is%3Aissue+is%3Aclosed",
+        "closed_pages": 2,
+        "doc_category": "OverlayPlugin"
+    },
+    {
+        "open_url": "https://github.com/ngld/OverlayPlugin/issues?page={}&q=is%3Aissue+is%3Aopen",
+        "open_pages": 2,
+        "closed_url": "https://github.com/ngld/OverlayPlugin/issues?page={}&q=is%3Aissue+is%3Aclosed",
+        "closed_pages": 4,
+        "doc_category": "OverlayPlugin"
+    },
+    {
+        "open_url": "https://github.com/hibiyasleep/OverlayPlugin/issues",
+        "open_pages": 1,
+        "closed_url": "https://github.com/hibiyasleep/OverlayPlugin/issues?q=is%3Aopen+is%3Aissue",
+        "closed_pages": 1,
+        "doc_category": "OverlayPlugin"
+    },
+    {
+        "open_url": "https://github.com/RainbowMage/OverlayPlugin/issues",
+        "open_pages": 1,
+        "closed_url": "https://github.com/RainbowMage/OverlayPlugin/issues?page={}&q=is%3Aissue+is%3Aclosed",
+        "closed_pages": 1,
+        "doc_category": "OverlayPlugin"
+    },
+    {
+        "open_url": "https://github.com/OverlayPlugin/cactbot/issues",
+        "open_pages": 1,
+        "closed_url": "https://github.com/OverlayPlugin/cactbot/issues?q=is%3Aissue+is%3Aclosed",
+        "closed_pages": 1,
+        "doc_category": "Cactbot"
+    },
+    {
+        "open_url": "https://github.com/quisquous/cactbot/issues?page={}&q=is%3Aissue+is%3Aopen",
+        "open_pages": 3,
+        "closed_url": "https://github.com/quisquous/cactbot/issues?page={}&q=is%3Aissue+is%3Aclosed",
+        "closed_pages": 51,
+        "doc_category": "Cactbot"
+    },
+    {
+        "open_url": "https://github.com/ravahn/FFXIV_ACT_Plugin/issues?page={}&q=is%3Aissue+is%3Aopen",
+        "open_pages": 2,
+        "closed_url": "https://github.com/ravahn/FFXIV_ACT_Plugin/issues?page={}&q=is%3Aissue+is%3Aclosed",
+        "closed_pages": 12,
+        "doc_category": "FFXIV_ACT_Plugin"
+    },
+    {
+        "open_url": "https://github.com/EQAditu/AdvancedCombatTracker/issues",
+        "open_pages": 1,
+        "closed_url": "https://github.com/EQAditu/AdvancedCombatTracker/issues?page={}&q=is%3Aissue+is%3Aclosed",
+        "closed_pages": 3,
+        "doc_category": "ACT"
+    }
+]
