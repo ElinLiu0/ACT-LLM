@@ -48,7 +48,7 @@ python TestingScript.py
 ```
 
 对于测试的结果您可以，您可以在LLM执行完成后检查其项目根目录下的`TestingResult.json`以核查LLM
-生成的准确性。
+生成的准确性。届时，您也可以自行修改`Cases.txt`以定制您的特化测试用例，每个单独的用例问题请以回车分隔。
 
 ### Todo List
 
