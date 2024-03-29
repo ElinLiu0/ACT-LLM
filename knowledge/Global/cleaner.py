@@ -27,7 +27,7 @@ def extract_github_issue(html_path:str,type:str) -> SimpleGithubExtractBody:
     chats = []
     for chat in soup.find_all("div", class_="timeline-comment-group"):
         user = chat.find("a", class_="author").text
-        content = chat.find("div", class_="edit-comment-hide").text.replace("\n","").replace("\r","").replace("\t","").replace("  ","")
+        content = chat.find("div", class_="edit-comment-hide").text.replace("\n","").replace("\r","").replace("\t","").replace("  ","").replace("All reactions","")
         chats.append({"user":user,"content":content})
     print(f"Extracted {len(chats)} chats")
     return SimpleGithubExtractBody(title=title,posttime=posttime,type=type,chats=chats)
@@ -35,38 +35,38 @@ def extract_github_issue(html_path:str,type:str) -> SimpleGithubExtractBody:
 sub_paths = pathlib.Path(".").rglob("*.html")
 
 
-# ACT_Issues = []
-# Cactbot_Issues = []
-FFIXV_ACT_Plugin_Issues = []
-# OverlayPlugin_Issues = []
+ACT_Issues = []
+Cactbot_Issues = []
+# FFIXV_ACT_Plugin_Issues = []
+OverlayPlugin_Issues = []
 
 Unparsed = []
 
 for sub_path in tqdm(sub_paths):
     try:
         splits = str(sub_path).split("/")[1]
-        # if "ACT" in splits:
-        #     ACT_Issues.append(extract_github_issue(sub_path,"ACT"))
-        # elif "Cactbot" in splits:
-        #     Cactbot_Issues.append(extract_github_issue(sub_path,"Cactbot"))
-        if "FFXIV_ACT_Plugin" in splits:
-            FFIXV_ACT_Plugin_Issues.append(extract_github_issue(sub_path,"FFXIV_ACT_Plugin")) # 用于测试，因此将其他类型的文档进行注释
-        # elif "OverlayPlugin" in splits:
-        #     OverlayPlugin_Issues.append(extract_github_issue(sub_path,"OverlayPlugin"))
+        if "ACT" in splits:
+            ACT_Issues.append(extract_github_issue(sub_path,"ACT"))
+        elif "Cactbot" in splits:
+            Cactbot_Issues.append(extract_github_issue(sub_path,"Cactbot"))
+        # if "FFXIV_ACT_Plugin" in splits:
+        #     FFIXV_ACT_Plugin_Issues.append(extract_github_issue(sub_path,"FFXIV_ACT_Plugin")) # 用于测试，因此将其他类型的文档进行注释
+        elif "OverlayPlugin" in splits:
+            OverlayPlugin_Issues.append(extract_github_issue(sub_path,"OverlayPlugin"))
     except:
         Unparsed.append(sub_path)
 # Saving the extracted data
-# with open("./cleaned/ACT/issues.json","w") as f:
-#     f.write(json.dumps([issue.dict() for issue in ACT_Issues],indent=4))
+with open("./cleaned/ACT/issues.json","w") as f:
+    f.write(json.dumps([issue.dict() for issue in ACT_Issues],indent=4))
 
-# with open("./cleaned/Cactbot/issues.json","w") as f:
-#     f.write(json.dumps([issue.dict() for issue in Cactbot_Issues],indent=4))
+with open("./cleaned/Cactbot/issues.json","w") as f:
+    f.write(json.dumps([issue.dict() for issue in Cactbot_Issues],indent=4))
 
-with open("./cleaned/FFXIV_ACT_Plugin/issues.json","w") as f:
-    f.write(json.dumps([issue.dict() for issue in FFIXV_ACT_Plugin_Issues],indent=4))
+# with open("./cleaned/FFXIV_ACT_Plugin/issues.json","w") as f:
+#     f.write(json.dumps([issue.dict() for issue in FFIXV_ACT_Plugin_Issues],indent=4))
 
-# with open("./cleaned/OverlayPlugin/issues.json","w") as f:
-#     f.write(json.dumps([issue.dict() for issue in OverlayPlugin_Issues],indent=4))
+with open("./cleaned/OverlayPlugin/issues.json","w") as f:
+    f.write(json.dumps([issue.dict() for issue in OverlayPlugin_Issues],indent=4))
 print(f"Below {len(Unparsed)} files were not parsed")
 print(Unparsed)
 print("Done")

@@ -6,7 +6,6 @@
 from langchain.agents import (
     initialize_agent,
     Tool,
-    AgentType,
     AgentExecutor
 )
 from langchain_openai import ChatOpenAI
@@ -243,6 +242,7 @@ class ACTGlobalAgent:
         try:
             logger.info(f"Running ACTAgent with query: {query}.")
             result = self.executor.invoke({"input":query})
+            logger.debug(f"LLM Invoked with {result}")
             return result["output"]
         except Exception as e:
             logger.error(f"Error: {e} been raised at ACTAgent.run() at line {e.__traceback__.tb_lineno}.")
